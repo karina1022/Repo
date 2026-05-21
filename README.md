@@ -1,8 +1,13 @@
 # 彭祥恩備註  
-## 20260522進度  
+## 待完成事項  
 ### Jetson 組 :  
 1. Nano環境設置好，可以隨便跑一個人的辨識模型  
 2. UART 雙向傳輸 (Nano到STM)  
+### STM 組:
+
+
+## 已完成事項
+### Jetson 組 :
 ### STM 組:
 ~~1. STM 環境設置完成~~ 05/21      
 ~~2. STM UART 雙向傳輸(電腦到STM)~~ 05/21  
@@ -16,7 +21,8 @@
 6/1 期末海報繳交<br>
 
 # 競賽規章
-[競賽規章](./比賽/115年中國工程師學會學生分會工程論文競賽.pdf)
+[競賽規章](./比賽/115年中國工程師學會學生分會工程論文競賽.pdf)<br>
+[競賽網站](https://sites.google.com/nycu.edu.tw/cie2026)
 
 # 比賽
 1. [2026國際創新創業競賽](https://bhuntr.com/tw/competitions/huixp3iu5mefhdp2f1)<br>

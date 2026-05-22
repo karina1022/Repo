@@ -1,6 +1,7 @@
 # 彭祥恩備註  
 ## 待完成事項  
-### Jetson 組 :   
+### Jetson 組 
+事件編碼Nano用uart傳STM32解碼結果   
 ### STM 組:
 
 

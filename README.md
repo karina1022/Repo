@@ -37,6 +37,7 @@
 8/7 初賽文件截止<br>
 11/1 決賽<br>
 
-# 114-2 專題期末書面
-[共用連結](https://docs.google.com/document/d/1NJNoAbx0ZLG1K6YqtPzt2JPfd-iPmpdZNoQGL9qlgUw/edit?usp=sharing)
+# 114-2 專題期末檔案
+[書面共用連結](https://docs.google.com/document/d/1NJNoAbx0ZLG1K6YqtPzt2JPfd-iPmpdZNoQGL9qlgUw/edit?usp=sharing)
 
+[海報共用連結](https://canva.link/8j4jp87wj2s3bix)

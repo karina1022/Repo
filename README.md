@@ -3,11 +3,12 @@
 ### Jetson 組 
 事件編碼:Nano用uart傳STM32解碼結果   
 ### STM 組:
-
+1.事件編碼傳送(發送端)  
+2.接收事件編碼(接收端)  
 
 ## 已完成事項
 ### Jetson 組 :
-~~1. Nano環境設置好，可以隨便跑一個人的辨識模型~~ 05/19
+~~1. Nano環境設置好，可以隨便跑一個人的辨識模型~~ 05/19  
 ~~2. UART 雙向傳輸 (Nano到STM)~~ 05/21 
 ### STM 組:
 ~~1. STM 環境設置完成~~ 05/21      
@@ -18,7 +19,7 @@
 週五 13:00-17:00<br>
 
 # Deadline
-5/25 期末書面繳交<br>
+6/1 期末書面繳交<br>
 6/1 期末海報繳交<br>
 
 # 競賽規章
@@ -26,11 +27,11 @@
 [競賽網站](https://sites.google.com/nycu.edu.tw/cie2026)
 
 # 比賽
-1. [2026國際創新創業競賽](https://bhuntr.com/tw/competitions/huixp3iu5mefhdp2f1)<br>
-3/16-6/5 報名<br>
-6/8公布入圍<br>
-6/11複賽收件<br>
-6/15複賽日期<br>
+1. [2026國際創新創業競賽](https://bhuntr.com/tw/competitions/huixp3iu5mefhdp2f1)  
+3/16-6/5 報名  
+6/8公布入圍  
+6/11複賽收件  
+6/15複賽日期  
 
 2. [全國大專校院智慧創新暨跨域整合創作競賽](https://niicc.cilab.csie.ncu.edu.tw/)<br>
 5/5-7/10 報名<br>

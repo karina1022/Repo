@@ -33,6 +33,8 @@
 [競賽規章](./比賽/115年中國工程師學會學生分會工程論文競賽.pdf)<br>
 [競賽網站](https://sites.google.com/nycu.edu.tw/cie2026)
 
+[繳交摘要連結](https://docs.google.com/document/d/1MF3ZDuQ7WEb78oyQUcGclyubOcHs5ys2/edit?usp=sharing&ouid=100804695889335940668&rtpof=true&sd=true)
+
 # 比賽
 1. [2026國際創新創業競賽](https://bhuntr.com/tw/competitions/huixp3iu5mefhdp2f1)  
 3/16-6/5 報名  

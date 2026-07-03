@@ -1,0 +1,4 @@
+{
+    "cortex-debug.gdbPath.windows": "C:/msys64/mingw64/bin/gdb-multiarch.exe",
+    "cortex-debug.armToolchainPath.windows": "C:/msys64/mingw64/bin/"
+}

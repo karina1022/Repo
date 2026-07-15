@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug", //可以自訂除錯組態的名稱
+            "cwd": "C:/STM32_demo/SPI LCD",
+            "executable": "C:/STM32_demo/SPI LCD/build/LCD_test.elf", //改為make後的.elf檔位置
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "STM32F407VG", //更改為使用的晶片型號
+            "windows":{
+                "configFiles": [
+                    "C:/msys64/mingw64/share/openocd/scripts/interface/stlink.cfg",
+                    //因為使用STLink進行除錯，所以使用stlink.cfg檔
+                    "C:/msys64/mingw64/share/openocd/scripts/target/stm32f4x.cfg",
+                    //因為使用STM32L432KC的晶片，所以使用stm32l4x.cfg
+                    //**需要根據需求修改成像：stm32f4x.cfg**
+                ],
+            },
+            "preLaunchCommands": ["make -j 22"], //這行會讓除錯前重新在編譯一次
+        }
+    ]
+}

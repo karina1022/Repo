@@ -1,0 +1,333 @@
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lcd.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/lcd.c"
+  20              		.section	.text.LCD_ShowSafeScreen,"ax",%progbits
+  21              		.align	1
+  22              		.global	LCD_ShowSafeScreen
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	LCD_ShowSafeScreen:
+  28              	.LFB134:
+   1:Core/Src/lcd.c **** #include "lcd.h"
+   2:Core/Src/lcd.c **** #include "lcd_images.h"
+   3:Core/Src/lcd.c **** #include "ili9341.h"
+   4:Core/Src/lcd.c **** 
+   5:Core/Src/lcd.c **** 
+   6:Core/Src/lcd.c **** void LCD_ShowSafeScreen(void)
+   7:Core/Src/lcd.c **** {
+  29              		.loc 1 7 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 83B0     		sub	sp, sp, #12
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+   8:Core/Src/lcd.c ****     ILI9341_DrawImage(
+  40              		.loc 1 8 5 view .LVU1
+  41 0004 054B     		ldr	r3, .L3
+  42 0006 0093     		str	r3, [sp]
+  43 0008 F023     		movs	r3, #240
+  44 000a 4FF4A072 		mov	r2, #320
+  45 000e 0021     		movs	r1, #0
+  46 0010 0846     		mov	r0, r1
+  47 0012 FFF7FEFF 		bl	ILI9341_DrawImage
+  48              	.LVL0:
+   9:Core/Src/lcd.c ****         0U,
+  10:Core/Src/lcd.c ****         0U,
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 2
+
+
+  11:Core/Src/lcd.c ****         LCD_IMAGE_WIDTH,
+  12:Core/Src/lcd.c ****         LCD_IMAGE_HEIGHT,
+  13:Core/Src/lcd.c ****         LCD_SAFE_IMAGE
+  14:Core/Src/lcd.c ****     );
+  15:Core/Src/lcd.c **** }
+  49              		.loc 1 15 1 is_stmt 0 view .LVU2
+  50 0016 03B0     		add	sp, sp, #12
+  51              	.LCFI2:
+  52              		.cfi_def_cfa_offset 4
+  53              		@ sp needed
+  54 0018 5DF804FB 		ldr	pc, [sp], #4
+  55              	.L4:
+  56              		.align	2
+  57              	.L3:
+  58 001c 00000000 		.word	LCD_SAFE_IMAGE
+  59              		.cfi_endproc
+  60              	.LFE134:
+  62              		.section	.text.LCD_ShowLevel1Screen,"ax",%progbits
+  63              		.align	1
+  64              		.global	LCD_ShowLevel1Screen
+  65              		.syntax unified
+  66              		.thumb
+  67              		.thumb_func
+  69              	LCD_ShowLevel1Screen:
+  70              	.LFB135:
+  16:Core/Src/lcd.c **** 
+  17:Core/Src/lcd.c **** 
+  18:Core/Src/lcd.c **** void LCD_ShowLevel1Screen(void)
+  19:Core/Src/lcd.c **** {
+  71              		.loc 1 19 1 is_stmt 1 view -0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75 0000 00B5     		push	{lr}
+  76              	.LCFI3:
+  77              		.cfi_def_cfa_offset 4
+  78              		.cfi_offset 14, -4
+  79 0002 83B0     		sub	sp, sp, #12
+  80              	.LCFI4:
+  81              		.cfi_def_cfa_offset 16
+  20:Core/Src/lcd.c ****     ILI9341_DrawImage(
+  82              		.loc 1 20 5 view .LVU4
+  83 0004 054B     		ldr	r3, .L7
+  84 0006 0093     		str	r3, [sp]
+  85 0008 F023     		movs	r3, #240
+  86 000a 4FF4A072 		mov	r2, #320
+  87 000e 0021     		movs	r1, #0
+  88 0010 0846     		mov	r0, r1
+  89 0012 FFF7FEFF 		bl	ILI9341_DrawImage
+  90              	.LVL1:
+  21:Core/Src/lcd.c ****         0U,
+  22:Core/Src/lcd.c ****         0U,
+  23:Core/Src/lcd.c ****         LCD_IMAGE_WIDTH,
+  24:Core/Src/lcd.c ****         LCD_IMAGE_HEIGHT,
+  25:Core/Src/lcd.c ****         LCD_LEVEL1_IMAGE
+  26:Core/Src/lcd.c ****     );
+  27:Core/Src/lcd.c **** }
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 3
+
+
+  91              		.loc 1 27 1 is_stmt 0 view .LVU5
+  92 0016 03B0     		add	sp, sp, #12
+  93              	.LCFI5:
+  94              		.cfi_def_cfa_offset 4
+  95              		@ sp needed
+  96 0018 5DF804FB 		ldr	pc, [sp], #4
+  97              	.L8:
+  98              		.align	2
+  99              	.L7:
+ 100 001c 00000000 		.word	LCD_LEVEL1_IMAGE
+ 101              		.cfi_endproc
+ 102              	.LFE135:
+ 104              		.section	.text.LCD_ShowLevel2Screen,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	LCD_ShowLevel2Screen
+ 107              		.syntax unified
+ 108              		.thumb
+ 109              		.thumb_func
+ 111              	LCD_ShowLevel2Screen:
+ 112              	.LFB136:
+  28:Core/Src/lcd.c **** 
+  29:Core/Src/lcd.c **** void LCD_ShowLevel2Screen(void)
+  30:Core/Src/lcd.c **** {
+ 113              		.loc 1 30 1 is_stmt 1 view -0
+ 114              		.cfi_startproc
+ 115              		@ args = 0, pretend = 0, frame = 0
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117 0000 00B5     		push	{lr}
+ 118              	.LCFI6:
+ 119              		.cfi_def_cfa_offset 4
+ 120              		.cfi_offset 14, -4
+ 121 0002 83B0     		sub	sp, sp, #12
+ 122              	.LCFI7:
+ 123              		.cfi_def_cfa_offset 16
+  31:Core/Src/lcd.c ****     ILI9341_DrawImage(
+ 124              		.loc 1 31 5 view .LVU7
+ 125 0004 054B     		ldr	r3, .L11
+ 126 0006 0093     		str	r3, [sp]
+ 127 0008 F023     		movs	r3, #240
+ 128 000a 4FF4A072 		mov	r2, #320
+ 129 000e 0021     		movs	r1, #0
+ 130 0010 0846     		mov	r0, r1
+ 131 0012 FFF7FEFF 		bl	ILI9341_DrawImage
+ 132              	.LVL2:
+  32:Core/Src/lcd.c ****         0U,
+  33:Core/Src/lcd.c ****         0U,
+  34:Core/Src/lcd.c ****         LCD_IMAGE_WIDTH,
+  35:Core/Src/lcd.c ****         LCD_IMAGE_HEIGHT,
+  36:Core/Src/lcd.c ****         LCD_LEVEL2_IMAGE
+  37:Core/Src/lcd.c ****     );
+  38:Core/Src/lcd.c **** }
+ 133              		.loc 1 38 1 is_stmt 0 view .LVU8
+ 134 0016 03B0     		add	sp, sp, #12
+ 135              	.LCFI8:
+ 136              		.cfi_def_cfa_offset 4
+ 137              		@ sp needed
+ 138 0018 5DF804FB 		ldr	pc, [sp], #4
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 4
+
+
+ 139              	.L12:
+ 140              		.align	2
+ 141              	.L11:
+ 142 001c 00000000 		.word	LCD_LEVEL2_IMAGE
+ 143              		.cfi_endproc
+ 144              	.LFE136:
+ 146              		.section	.text.LCD_ShowLevel3Screen,"ax",%progbits
+ 147              		.align	1
+ 148              		.global	LCD_ShowLevel3Screen
+ 149              		.syntax unified
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	LCD_ShowLevel3Screen:
+ 154              	.LFB137:
+  39:Core/Src/lcd.c **** 
+  40:Core/Src/lcd.c **** 
+  41:Core/Src/lcd.c **** void LCD_ShowLevel3Screen(void)
+  42:Core/Src/lcd.c **** {
+ 155              		.loc 1 42 1 is_stmt 1 view -0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0000 00B5     		push	{lr}
+ 160              	.LCFI9:
+ 161              		.cfi_def_cfa_offset 4
+ 162              		.cfi_offset 14, -4
+ 163 0002 83B0     		sub	sp, sp, #12
+ 164              	.LCFI10:
+ 165              		.cfi_def_cfa_offset 16
+  43:Core/Src/lcd.c ****     ILI9341_DrawImage(
+ 166              		.loc 1 43 5 view .LVU10
+ 167 0004 054B     		ldr	r3, .L15
+ 168 0006 0093     		str	r3, [sp]
+ 169 0008 F023     		movs	r3, #240
+ 170 000a 4FF4A072 		mov	r2, #320
+ 171 000e 0021     		movs	r1, #0
+ 172 0010 0846     		mov	r0, r1
+ 173 0012 FFF7FEFF 		bl	ILI9341_DrawImage
+ 174              	.LVL3:
+  44:Core/Src/lcd.c ****         0U,
+  45:Core/Src/lcd.c ****         0U,
+  46:Core/Src/lcd.c ****         LCD_IMAGE_WIDTH,
+  47:Core/Src/lcd.c ****         LCD_IMAGE_HEIGHT,
+  48:Core/Src/lcd.c ****         LCD_LEVEL3_IMAGE
+  49:Core/Src/lcd.c ****     );
+  50:Core/Src/lcd.c **** }
+ 175              		.loc 1 50 1 is_stmt 0 view .LVU11
+ 176 0016 03B0     		add	sp, sp, #12
+ 177              	.LCFI11:
+ 178              		.cfi_def_cfa_offset 4
+ 179              		@ sp needed
+ 180 0018 5DF804FB 		ldr	pc, [sp], #4
+ 181              	.L16:
+ 182              		.align	2
+ 183              	.L15:
+ 184 001c 00000000 		.word	LCD_LEVEL3_IMAGE
+ 185              		.cfi_endproc
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 5
+
+
+ 186              	.LFE137:
+ 188              		.section	.text.LCD_ShowSystemErrorScreen,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	LCD_ShowSystemErrorScreen
+ 191              		.syntax unified
+ 192              		.thumb
+ 193              		.thumb_func
+ 195              	LCD_ShowSystemErrorScreen:
+ 196              	.LFB138:
+  51:Core/Src/lcd.c **** 
+  52:Core/Src/lcd.c **** 
+  53:Core/Src/lcd.c **** void LCD_ShowSystemErrorScreen(void)
+  54:Core/Src/lcd.c **** {
+ 197              		.loc 1 54 1 is_stmt 1 view -0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201 0000 00B5     		push	{lr}
+ 202              	.LCFI12:
+ 203              		.cfi_def_cfa_offset 4
+ 204              		.cfi_offset 14, -4
+ 205 0002 83B0     		sub	sp, sp, #12
+ 206              	.LCFI13:
+ 207              		.cfi_def_cfa_offset 16
+  55:Core/Src/lcd.c ****     ILI9341_DrawImage(
+ 208              		.loc 1 55 5 view .LVU13
+ 209 0004 054B     		ldr	r3, .L19
+ 210 0006 0093     		str	r3, [sp]
+ 211 0008 F023     		movs	r3, #240
+ 212 000a 4FF4A072 		mov	r2, #320
+ 213 000e 0021     		movs	r1, #0
+ 214 0010 0846     		mov	r0, r1
+ 215 0012 FFF7FEFF 		bl	ILI9341_DrawImage
+ 216              	.LVL4:
+  56:Core/Src/lcd.c ****         0U,
+  57:Core/Src/lcd.c ****         0U,
+  58:Core/Src/lcd.c ****         LCD_IMAGE_WIDTH,
+  59:Core/Src/lcd.c ****         LCD_IMAGE_HEIGHT,
+  60:Core/Src/lcd.c ****         LCD_SYSTEM_ERROR_IMAGE
+  61:Core/Src/lcd.c ****     );
+  62:Core/Src/lcd.c **** }...
+ 217              		.loc 1 62 1 is_stmt 0 view .LVU14
+ 218 0016 03B0     		add	sp, sp, #12
+ 219              	.LCFI14:
+ 220              		.cfi_def_cfa_offset 4
+ 221              		@ sp needed
+ 222 0018 5DF804FB 		ldr	pc, [sp], #4
+ 223              	.L20:
+ 224              		.align	2
+ 225              	.L19:
+ 226 001c 00000000 		.word	LCD_SYSTEM_ERROR_IMAGE
+ 227              		.cfi_endproc
+ 228              	.LFE138:
+ 230              		.text
+ 231              	.Letext0:
+ 232              		.file 2 "C:/msys64/mingw64/arm-none-eabi/include/machine/_default_types.h"
+ 233              		.file 3 "C:/msys64/mingw64/arm-none-eabi/include/sys/_stdint.h"
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 6
+
+
+ 234              		.file 4 "LCD_Warning/lcd_images.h"
+ 235              		.file 5 "Core/Inc/ili9341.h"
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccPT67WB.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd.c
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:21     .text.LCD_ShowSafeScreen:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:27     .text.LCD_ShowSafeScreen:00000000 LCD_ShowSafeScreen
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:58     .text.LCD_ShowSafeScreen:0000001c $d
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:63     .text.LCD_ShowLevel1Screen:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:69     .text.LCD_ShowLevel1Screen:00000000 LCD_ShowLevel1Screen
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:100    .text.LCD_ShowLevel1Screen:0000001c $d
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:105    .text.LCD_ShowLevel2Screen:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:111    .text.LCD_ShowLevel2Screen:00000000 LCD_ShowLevel2Screen
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:142    .text.LCD_ShowLevel2Screen:0000001c $d
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:147    .text.LCD_ShowLevel3Screen:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:153    .text.LCD_ShowLevel3Screen:00000000 LCD_ShowLevel3Screen
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:184    .text.LCD_ShowLevel3Screen:0000001c $d
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:189    .text.LCD_ShowSystemErrorScreen:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:195    .text.LCD_ShowSystemErrorScreen:00000000 LCD_ShowSystemErrorScreen
+C:\Users\user\AppData\Local\Temp\ccPT67WB.s:226    .text.LCD_ShowSystemErrorScreen:0000001c $d
+
+UNDEFINED SYMBOLS
+ILI9341_DrawImage
+LCD_SAFE_IMAGE
+LCD_LEVEL1_IMAGE
+LCD_LEVEL2_IMAGE
+LCD_LEVEL3_IMAGE
+LCD_SYSTEM_ERROR_IMAGE

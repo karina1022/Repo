@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug", 
+            "cwd": "D:/college/STM32/IR_Receiver_0721_3GPIO",
+            "executable": "D:/college/STM32/IR_Receiver_0721_3GPIO/build/DFPlayer_Test.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "STM32F407VG", 
+            "windows":{
+                "configFiles": [
+                    "C:/msys64/mingw64/share/openocd/scripts/interface/stlink.cfg",
+                    
+                    "C:/msys64/mingw64/share/openocd/scripts/target/stm32f4x.cfg"
+                    
+                ]
+            },
+            "preLaunchCommands": ["make -j 22"]
+        }
+    ]
+}

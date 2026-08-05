@@ -8,7 +8,6 @@
 extern "C" {
 #endif
 
-/* ILI9341 portrait resolution */
 #define ILI9341_WIDTH   320U
 #define ILI9341_HEIGHT  240U
 
@@ -33,10 +32,6 @@ extern "C" {
 #define ILI9341_GREENYELLOW 0xAFE5U
 #define ILI9341_PINK        0xFC18U
 
-/*
- * Header files contain declarations only.
- * Function bodies belong in ili9341.c.
- */
 void ILI9341_Init(void);
 void ILI9341_FillScreen(uint16_t color);
 void ILI9341_TestPattern(void);
@@ -54,6 +49,7 @@ void ILI9341_DrawPixel(
     uint16_t y,
     uint16_t color
 );
+
 void ILI9341_DrawImage(
     uint16_t x,
     uint16_t y,
@@ -61,6 +57,37 @@ void ILI9341_DrawImage(
     uint16_t height,
     const uint16_t *image
 );
+
+/*
+ * 從一張較大的 RGB565 圖片中，只取出指定矩形並畫到面板。
+ *
+ * destination_x / destination_y：
+ *     要顯示在 LCD 上的位置。
+ *
+ * region_width / region_height：
+ *     要更新的局部區域尺寸。
+ *
+ * source_image：
+ *     完整 RGB565 圖片資料。
+ *
+ * source_width / source_height：
+ *     完整來源圖片尺寸。
+ *
+ * source_x / source_y：
+ *     要從完整圖片的哪個座標開始取資料。
+ */
+void ILI9341_DrawImageRegion(
+    uint16_t destination_x,
+    uint16_t destination_y,
+    uint16_t region_width,
+    uint16_t region_height,
+    const uint16_t *source_image,
+    uint16_t source_width,
+    uint16_t source_height,
+    uint16_t source_x,
+    uint16_t source_y
+);
+
 void ILI9341_DrawIndexed4(
     uint16_t x,
     uint16_t y,

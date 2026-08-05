@@ -425,6 +425,119 @@ void ILI9341_DrawImage(
 
     LCD_CS_HIGH();
 }
+
+void ILI9341_DrawImageRegion(
+    uint16_t destination_x,
+    uint16_t destination_y,
+    uint16_t region_width,
+    uint16_t region_height,
+    const uint16_t *source_image,
+    uint16_t source_width,
+    uint16_t source_height,
+    uint16_t source_x,
+    uint16_t source_y)
+{
+    uint8_t buffer[128];
+    uint16_t row;
+
+    if ((source_image == NULL) ||
+        (region_width == 0U) ||
+        (region_height == 0U) ||
+        (source_width == 0U) ||
+        (source_height == 0U))
+    {
+        return;
+    }
+
+    /* 確認來源矩形沒有超出原始圖片。 */
+    if (((uint32_t)source_x + region_width) > source_width)
+    {
+        return;
+    }
+
+    if (((uint32_t)source_y + region_height) > source_height)
+    {
+        return;
+    }
+
+    /* 確認目的矩形沒有超出 LCD。 */
+    if (((uint32_t)destination_x + region_width) > ILI9341_WIDTH)
+    {
+        return;
+    }
+
+    if (((uint32_t)destination_y + region_height) > ILI9341_HEIGHT)
+    {
+        return;
+    }
+
+    LCD_SetRegion(
+        destination_x,
+        destination_y,
+        (uint16_t)(destination_x + region_width - 1U),
+        (uint16_t)(destination_y + region_height - 1U)
+    );
+
+    LCD_CS_LOW();
+    LCD_DC_DATA();
+
+    /*
+     * LCD 的目的區域是一個連續矩形，但來源圖片每列的跨度是
+     * source_width，因此逐列取出需要的區段，再連續送往 LCD。
+     */
+    for (row = 0U; row < region_height; row++)
+    {
+        const uint16_t *source_row;
+        uint16_t remaining_pixels = region_width;
+        uint16_t column = 0U;
+
+        source_row =
+            source_image +
+            ((uint32_t)(source_y + row) * source_width) +
+            source_x;
+
+        while (remaining_pixels > 0U)
+        {
+            uint16_t pixels_this_transfer;
+            uint16_t buffer_index = 0U;
+            uint16_t i;
+
+            pixels_this_transfer = remaining_pixels;
+
+            if (pixels_this_transfer > 64U)
+            {
+                pixels_this_transfer = 64U;
+            }
+
+            for (i = 0U; i < pixels_this_transfer; i++)
+            {
+                uint16_t color = source_row[column + i];
+
+                buffer[buffer_index] =
+                    (uint8_t)(color >> 8U);
+
+                buffer[buffer_index + 1U] =
+                    (uint8_t)(color & 0xFFU);
+
+                buffer_index += 2U;
+            }
+
+            LCD_Transmit(
+                buffer,
+                (uint16_t)(pixels_this_transfer * 2U)
+            );
+
+            column =
+                (uint16_t)(column + pixels_this_transfer);
+
+            remaining_pixels =
+                (uint16_t)(remaining_pixels - pixels_this_transfer);
+        }
+    }
+
+    LCD_CS_HIGH();
+}
+
 void ILI9341_DrawIndexed4(
     uint16_t x,
     uint16_t y,
